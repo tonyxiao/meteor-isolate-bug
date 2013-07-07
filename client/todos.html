@@ -64,6 +64,12 @@
 </template>
 
 <template name="todo_item">
+  <input type="text" placeholder="Should be preserved, but isn't" style="width: 300px">
+  {{#constant}}
+  <input type="text" placeholder="Preserved because of #constant" style="width: 300px">
+  {{/constant}}
+  
+  {{#isolate}}
   <li class="todo {{done_class}}">
     {{#if editing}}
       <div class="edit">
@@ -94,6 +100,7 @@
       {{/if}}
     </div>
   </li>
+  {{/isolate}}
 </template>
 
 <template name="tag_filter">
